@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Love Calculator</title>
+</head>
+
+<body>
+
+<h2>Love Calculator</h2>
+
+<label>First Name:</label>
+<input type="text" id="firstName"><br><br>
+
+<label>Second Name:</label>
+<input type="text" id="secondName"><br><br>
+
+<button onclick="calculateLove()">Calculate Love</button>
+
+<h3 id="result"></h3>
+<p id="message"></p>
+
+<script>
+
+function calculateLove() {
+
+    let firstName = document.getElementById("firstName").value;
+    let secondName = document.getElementById("secondName").value;
+
+    let combinedNames = (firstName + secondName).toLowerCase();
+
+    let loveScore = 0;
+
+    for(let i = 0; i < combinedNames.length; i++) {
+        loveScore += combinedNames.charCodeAt(i);
+    }
+
+    loveScore = loveScore % 101;
+
+    document.getElementById("result").innerText =
+        firstName + " and " + secondName + "'s Love Score is: " + loveScore + "%";
+
+    let message = "";
+
+    if(loveScore >= 80) {
+        message = "Wow! That's true love!";
+    }
+    else if(loveScore >= 60) {
+        message = "Looks like a strong connection.";
+    }
+    else if(loveScore >= 40) {
+        message = "Not bad. There's potential.";
+    }
+    else {
+        message = "Hmm, maybe not a perfect match.";
+    }
+
+    document.getElementById("message").innerText = message;
+}
+
+</script>
+
+</body>
+</html>
