@@ -1,0 +1,33 @@
+body{
+    font-family: Arial;
+    background: linear-gradient(to right, pink, red);
+    text-align:center;
+}
+
+.container{
+    background:white;
+    padding:30px;
+    width:300px;
+    margin:100px auto;
+    border-radius:10px;
+    box-shadow:0px 0px 10px grey;
+}
+
+input{
+    width:90%;
+    padding:10px;
+    margin:10px;
+}
+
+button{
+    padding:10px 20px;
+    background:red;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:darkred;
+}
